@@ -1,12 +1,14 @@
-import modul_1.ConsoleReader;
+package sport_programming.module_1.first_test;
 
-public class FifthTask {
-    private int n;
-    private int numberOfSeq;
+import utils.ConsoleReader;
+
+class FifthTask {
+    private final int n;
+    private final int numberOfSeq;
     private int count;
-    private int[] combination;
+    private final int[] combination;
 
-    private FifthTask () {
+    FifthTask () {
         System.out.println("n = ");
         n = ConsoleReader.readInt();
         combination = new int[n];
@@ -27,7 +29,7 @@ public class FifthTask {
         System.out.println();
     }
 
-    private void recursive (int index, int sum, int last) {
+    void recursive (int index, int sum, int last) {
         if (sum == n) {
             count++;
             if (count == numberOfSeq) print(index);
@@ -38,10 +40,5 @@ public class FifthTask {
             combination[index] = i;
             recursive(index + 1, sum + i, i);
         }
-    }
-
-    public static void main(String[] args) {
-        FifthTask task = new FifthTask();
-        task.recursive(0, 0, 1);
     }
 }

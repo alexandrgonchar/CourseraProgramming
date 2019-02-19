@@ -1,15 +1,16 @@
-import modul_1.ConsoleReader;
+package sport_programming.module_1.first_test;
 
-public class ThirdTask {
-    private String brackets;
+import utils.ConsoleReader;
 
-    private ThirdTask () {
+class ThirdTask {
+    private final String brackets;
 
+    ThirdTask () {
         brackets = ConsoleReader.readString();
         ConsoleReader.close();
     }
 
-    private boolean isCorrect () {
+    boolean isCorrect () {
         int balance = 0;
 
         for (char character : brackets.toCharArray()) {
@@ -21,11 +22,5 @@ public class ThirdTask {
         }
 
         return balance == 0;
-    }
-
-    public static void main(String[] args) {
-        ThirdTask task = new ThirdTask();
-
-        System.out.println(task.isCorrect());
     }
 }

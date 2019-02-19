@@ -1,4 +1,4 @@
-package modul_1;
+package utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class ConsoleReader {
 
-    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static int readInt () {
         StringBuilder string = null;

@@ -1,13 +1,15 @@
-import modul_1.ConsoleReader;
+package sport_programming.module_1.first_test;
 
-public class SecondTask {
-    private int n;
-    private int numberOfSeq;
-    private int[] sequences;
-    private boolean[] used;
+import utils.ConsoleReader;
+
+class SecondTask {
+    private final int n;
+    private final int numberOfSeq;
+    private final int[] sequences;
+    private final boolean[] used;
     private int count;
 
-    private SecondTask () {
+    SecondTask () {
         System.out.println("n = ");
         this.n = ConsoleReader.readInt();
 
@@ -28,7 +30,7 @@ public class SecondTask {
         System.out.println();
     }
 
-    private void recursive (int index) {
+    void recursive (int index) {
 
         if (index == n) {
             count++;
@@ -46,10 +48,5 @@ public class SecondTask {
             recursive(index + 1);
             used[i] = false;
         }
-    }
-
-    public static void main(String[] args) {
-        SecondTask task = new SecondTask();
-        task.recursive(0);
     }
 }

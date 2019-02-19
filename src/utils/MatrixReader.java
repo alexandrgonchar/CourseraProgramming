@@ -1,4 +1,4 @@
-package modul_1;
+package utils;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -7,9 +7,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class MatrixReader {
-    private ArrayList<String> strings;
-    private int n;
-    private int[][] matrix;
+    private final ArrayList<String> strings;
+    private final int n;
+    private final int[][] matrix;
 
     private static final String FILE_NAME = "/home/azathoth/IdeaProjects/CourseraPrograming/resources/matrix.txt";
 

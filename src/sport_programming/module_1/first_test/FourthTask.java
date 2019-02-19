@@ -1,10 +1,12 @@
-import modul_1.ConsoleReader;
+package sport_programming.module_1.first_test;
 
-public class FourthTask {
-    private int n;
-    private int[] combination;
+import utils.ConsoleReader;
 
-    private FourthTask () {
+class FourthTask {
+    private final int n;
+    private final int[] combination;
+
+    FourthTask () {
         n = ConsoleReader.readInt();
         combination = new int[n];
 
@@ -20,7 +22,7 @@ public class FourthTask {
         System.out.println();
     }
 
-    private void recursive (int index, int sum, int last) {
+    void recursive (int index, int sum, int last) {
         if (sum == n) {
             print(index);
             return;
@@ -30,10 +32,5 @@ public class FourthTask {
             combination[index] = i;
             recursive(index + 1, sum + i, i);
         }
-    }
-
-    public static void main(String[] args) {
-        FourthTask task = new FourthTask();
-        task.recursive(0, 0, 1);
     }
 }

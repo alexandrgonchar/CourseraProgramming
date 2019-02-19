@@ -1,13 +1,15 @@
-import modul_1.ConsoleReader;
+package sport_programming.module_1.first_test;
 
-public class SixTask {
-    private int n;
-    private int m;
+import utils.ConsoleReader;
+
+class SixTask {
+    private final int n;
+    private final int m;
     private int recurCounter = 1;
-    private int numberOfSeq;
-    private int[] field;
+    private final int numberOfSeq;
+    private final int[] field;
 
-    public SixTask () {
+    SixTask () {
         System.out.println("n = ");
         n = ConsoleReader.readInt();
 
@@ -22,7 +24,7 @@ public class SixTask {
         ConsoleReader.close();
     }
 
-    private void recursive (int index, int mCounter, boolean isOne, int num) {
+    void recursive (int index, int mCounter, boolean isOne, int num) {
         if (mCounter == m) {
             if (recurCounter == numberOfSeq) print();
 
@@ -44,16 +46,8 @@ public class SixTask {
     }
 
     private void print(){
-
         for (int aField : field) System.out.print(aField);
 
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        SixTask task = new SixTask();
-
-        task.recursive(0, 0, false, 1);
-        task.recursive(0, 0, false, 0);
     }
 }

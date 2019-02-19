@@ -1,13 +1,15 @@
-package modul_1;
+package sport_programming.module_1.second_test;
 
-public class FourthTask {
-    private int n;
-    private int[][] roads;
-    private int[] path;
-    private boolean[] used;
+import utils.MatrixReader;
+
+class FourthTask {
+    private final int n;
+    private final int[][] roads;
+    private final int[] path;
+    private final boolean[] used;
     private int answer = Integer.MAX_VALUE;
 
-    public FourthTask () {
+    FourthTask () {
         MatrixReader reader = new MatrixReader();
         n = reader.getMatrixSize();
         System.out.println(n);
@@ -18,7 +20,7 @@ public class FourthTask {
         used = new boolean[n];
     }
 
-    public void recursive (int index, int length) {
+    void recursive (int index, int length) {
         if (length >= answer) return;
 
         if (index == n) {
@@ -37,24 +39,7 @@ public class FourthTask {
         }
     }
 
-//    private int pathCount () {
-//        int result = 0;
-//
-//        for (int i = 0; i < path.length - 1; i++) {
-//            result += roads[path[i]][path[i + 1]];
-//        }
-//
-//        return result;
-//    }
-
-    public static void main(String[] args) {
-        FourthTask task = new FourthTask();
-        task.recursive(1, 0);
-
-        for (int i : task.path) {
-            System.out.print(i + " ");
-        }
-
-        System.out.println(task.answer);
+    int getAnswer () {
+        return answer;
     }
 }
