@@ -9,19 +9,17 @@ class FirstTask {
     private final int[] sequences;
     private int count;
 
-    FirstTask () {
+    FirstTask (ConsoleReader reader) {
         System.out.println("n = ");
-        this.n = ConsoleReader.readInt();
+        this.n = reader.readInt();
 
         System.out.println("m = ");
-        this.m = ConsoleReader.readInt();
+        this.m = reader.readInt();
 
         System.out.println("number of seq = ");
-        this.numberOfSeq = ConsoleReader.readInt();
+        this.numberOfSeq = reader.readInt();
         count = 0;
         sequences = new int[n];
-
-        ConsoleReader.close();
     }
 
     private void print () {
@@ -37,7 +35,6 @@ class FirstTask {
         if (index == n) {
             count++;
             if (count == numberOfSeq) print();
-            System.out.println(count);
             return;
         }
 

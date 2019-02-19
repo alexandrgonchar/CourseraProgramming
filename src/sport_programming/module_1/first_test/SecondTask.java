@@ -9,17 +9,15 @@ class SecondTask {
     private final boolean[] used;
     private int count;
 
-    SecondTask () {
+    SecondTask (ConsoleReader reader) {
         System.out.println("n = ");
-        this.n = ConsoleReader.readInt();
+        this.n = reader.readInt();
 
         System.out.println("number of seq = ");
-        this.numberOfSeq = ConsoleReader.readInt();
+        this.numberOfSeq = reader.readInt();
         count = 0;
         sequences = new int[n];
         used = new boolean[n + 1];
-
-        ConsoleReader.close();
     }
 
     private void print () {

@@ -5,9 +5,8 @@ import utils.ConsoleReader;
 class ThirdTask {
     private final String brackets;
 
-    ThirdTask () {
-        brackets = ConsoleReader.readString();
-        ConsoleReader.close();
+    ThirdTask (ConsoleReader reader) {
+        brackets = reader.readString();
     }
 
     boolean isCorrect () {

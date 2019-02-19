@@ -6,11 +6,9 @@ class FourthTask {
     private final int n;
     private final int[] combination;
 
-    FourthTask () {
-        n = ConsoleReader.readInt();
+    FourthTask (ConsoleReader reader) {
+        n = reader.readInt();
         combination = new int[n];
-
-        ConsoleReader.close();
     }
 
     private void print (int index) {

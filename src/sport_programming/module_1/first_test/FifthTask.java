@@ -8,16 +8,14 @@ class FifthTask {
     private int count;
     private final int[] combination;
 
-    FifthTask () {
+    FifthTask (ConsoleReader reader) {
         System.out.println("n = ");
-        n = ConsoleReader.readInt();
+        n = reader.readInt();
         combination = new int[n];
 
         System.out.println("number of seq = ");
-        this.numberOfSeq = ConsoleReader.readInt();
+        this.numberOfSeq = reader.readInt();
         count = 0;
-
-        ConsoleReader.close();
     }
 
     private void print (int index) {

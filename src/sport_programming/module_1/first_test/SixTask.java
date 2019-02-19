@@ -9,19 +9,17 @@ class SixTask {
     private final int numberOfSeq;
     private final int[] field;
 
-    SixTask () {
+    SixTask (ConsoleReader reader) {
         System.out.println("n = ");
-        n = ConsoleReader.readInt();
+        n = reader.readInt();
 
         System.out.println("m = ");
-        m = ConsoleReader.readInt();
+        m = reader.readInt();
 
         System.out.println("number of sequences = ");
-        numberOfSeq = ConsoleReader.readInt();
+        numberOfSeq = reader.readInt();
 
         field = new int[n];
-
-        ConsoleReader.close();
     }
 
     void recursive (int index, int mCounter, boolean isOne, int num) {

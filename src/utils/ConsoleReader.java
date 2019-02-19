@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 
 public class ConsoleReader {
 
-    private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static int readInt () {
+    public int readInt () {
         StringBuilder string = null;
         boolean isDigit = false;
 
@@ -20,7 +20,7 @@ public class ConsoleReader {
         return Integer.parseInt(string.toString());
     }
 
-    public static String readString () {
+    public String readString () {
         String result = "";
 
         try  {
@@ -33,7 +33,7 @@ public class ConsoleReader {
         return result;
     }
 
-    public static void close () {
+    public void close () {
         try {
             reader.close();
         } catch (IOException e) {

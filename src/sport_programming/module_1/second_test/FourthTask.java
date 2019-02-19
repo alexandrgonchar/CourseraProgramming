@@ -1,6 +1,7 @@
 package sport_programming.module_1.second_test;
 
 import utils.MatrixReader;
+import utils.MyFileReader;
 
 class FourthTask {
     private final int n;
@@ -9,8 +10,8 @@ class FourthTask {
     private final boolean[] used;
     private int answer = Integer.MAX_VALUE;
 
-    FourthTask () {
-        MatrixReader reader = new MatrixReader();
+    FourthTask (MyFileReader fileReader) {
+        MatrixReader reader = new MatrixReader(fileReader);
         n = reader.getMatrixSize();
         System.out.println(n);
         roads = reader.getMatrix();

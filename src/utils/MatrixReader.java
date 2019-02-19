@@ -1,9 +1,5 @@
 package utils;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class MatrixReader {
@@ -11,11 +7,8 @@ public class MatrixReader {
     private final int n;
     private final int[][] matrix;
 
-    private static final String FILE_NAME = "/home/azathoth/IdeaProjects/CourseraPrograming/resources/matrix.txt";
-
-    public MatrixReader () {
-        strings = new ArrayList<>();
-        readFile();
+    public MatrixReader (MyFileReader reader) {
+        strings = new ArrayList<>(reader.readFile());
 
         n = Integer.parseInt(strings.get(0));
         matrix = new int[n][n];
@@ -24,13 +17,7 @@ public class MatrixReader {
         setMatrix();
     }
 
-    private void readFile () {
-        try {
-            Files.lines(Paths.get(FILE_NAME), StandardCharsets.UTF_8).forEach(strings::add);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private void setMatrix () {
         int i = 0;

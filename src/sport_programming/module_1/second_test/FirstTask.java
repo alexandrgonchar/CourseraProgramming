@@ -9,10 +9,14 @@ class FirstTask {
     private final char[] brackets;
 
     FirstTask () {
-        n = ConsoleReader.readInt();
-        numberOfSeq = ConsoleReader.readInt();
+        ConsoleReader reader = new ConsoleReader();
+
+        n = reader.readInt();
+        numberOfSeq = reader.readInt();
 
         brackets = new char[2 * n];
+
+        reader.close();
     }
 
     void recursive (int index, int balance) {
